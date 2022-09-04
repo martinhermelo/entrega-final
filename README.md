@@ -5,8 +5,7 @@ Este proyecto esta ideado para brindar informacion necesaria sobre la Seleccion 
 
 ## Introduccion:
 
-Como dije anteriormente va a brindar informacion de la Seleccion Argentina, tambien va a brindar informacion acerca de las selecciones que participan, como estan divididos los grupos, los estadios en los cuales se va a jugar, las fechas de los partidos y los horarios. 
-A medida que avance el mundial se va a poder ir cargando las estadisticas de los partidos, equipos, clasificaciones, y demas.
+Como dije anteriormente va a brindar informacion de la Seleccion Argentina, tambien va a brindar informacion acerca de las selecciones que participan, como estan divididos los grupos, los estadios en los cuales se va a jugar, y notas relacionadas. 
 
 ## Que vas a encontrar aca:
 
@@ -16,6 +15,9 @@ A medida que avance el mundial se va a poder ir cargando las estadisticas de los
  - Notas
  - Grupos
  - Estadios
+
+#### Que hice:
+El diseño de esta pagina consistio en la creacion de las aplicaciones: Plantel, Selecciones, Notas, Grupos, Estadios, Users. Donde en cada aplicacion se crearon las funcionalidades para cargar un nuevo contenido, mostrarlo, editarlo, borrarlo, detallarlo. La Pagina esta' diseñada para que no cualquiera pueda acceder a estas funcionalidades. Tenes que estar registrado para poder ver los contenidos, pero los registrados tampoco puede modificar las cosas, solo los superusuarios pueden modificarlo.
 
 ## Creador
 
