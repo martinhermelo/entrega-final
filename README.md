@@ -27,3 +27,5 @@ Me parecio una idea interesante, justo por la proximidad del mundial hacer algo 
 Donde pueda explayar mis conocimientos aprendidos en el curso de Python de Coderhouse. 
 Antes de este curso nunca habia hecho nada relacionado a la programacion, pero siempre me intereso. 
 Python me llamo la atencion y por eso me decidi por este lenguaje.
+
+link video: https://www.youtube.com/watch?v=Bm-uyJoAMrg
