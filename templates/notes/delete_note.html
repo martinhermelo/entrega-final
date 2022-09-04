@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Borrar Nota
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    
+    <h1>Titulo de la Nota: {{object.title}}</h1>
+    <h3>Borrar Nota?</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <p><input type="submit" value="Borrar"></p>
+        
+    </form>
+    
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Lista de notas
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for note in object_list %}
+
+    <h1>{{note.title}}</h1>
+    <h2>De: {{note.author}}</h2>
+    <a href="/notes/detalle-nota/{{note.id}}/" class="btn btn-primary">Detalle</a>
+    
+        {% endfor %}
+
+
+
+{% endblock %}
