@@ -3,6 +3,7 @@ from groups.views import Groups
 from selecciones.views import Selecciones
 from plantel.views import Plantel
 from estadios.views import Estadios
+from blog.views import Notes
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -15,6 +16,7 @@ def search_all(request):
         groups = Groups.objects.filter(type__icontains=search)
         teams= Selecciones.objects.filter(name__icontains=search)
         stadiums= Estadios.objects.filter(name__icontains=search)
+        notes= Notes.objects.filter(author__icontains=search)
         context= {
             "players": players,
             "groups": groups,
