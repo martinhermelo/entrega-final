@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Busqueda
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for player in players %}
+
+    <div class="card" style="width: 18rem;">
+        
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Jugador: {{player.full_name}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Estatura: {{player.height}}</li>
+                <li class="list-group-item">Edad: {{player.age}}</li>
+                <li class="list-group-item">Club: {{player.club}}</li>
+                <li class="list-group-item">Posicion: {{player.position}}</li>
+                <li class="list-group-item">Pierna Habil: {{player.skillfull_leg}}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    {% for group in groups %}
+
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    {{group.type}}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{group.team1}}</li>
+                    <li class="list-group-item">{{group.team2}}</li>
+                    <li class="list-group-item">{{group.team3}}</li>
+                    <li class="list-group-item">{{group.team4}}</li>
+                </ul>
+            </div>
+    {% endfor %}
+
+    {% for team in teams %}
+
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{team.name}} from  {{team.federation}}</li>
+            
+        </ul>
+    </div>
+    
+    
+    {% endfor %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Borrar Estadio
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    
+        <h5 class="card-title">Estadio: {{stadium.name}}</h5>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <p><input type="submit" value="Borrar"></p>
+        
+    </form>
+    
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Borrar Grupo
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+    
+        <h5 class="card-title">{{group.type}}</h5>
+        <p class="card-text">{{group.team1}}</p>
+        <p class="card-text">{{group.team2}}</p>
+        <p class="card-text">{{group.team3}}</p>
+        <p class="card-text">{{group.team4}}</p>
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <p><input type="submit" value="Borrar"></p>
+        
+    </form>
+    
+
+
+
+{% endblock %}

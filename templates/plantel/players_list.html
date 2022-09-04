@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Plantilla
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <h1>PLANTEL RUMBO A QATAR:</h1>
+    
+    {% for player in players %}
+
+    <div class="card" style="width: 18rem;">
+        {% if player.image %}
+        <img src="{{player.image.url}}" class="card-img-top">
+        {% else %}
+        <img src="https://www.lavoz.com.ar/resizer/6Rcp7PkY7hTfbje_-rvct4EI270=/1023x661/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/WPKIYEIMQVAKPIDPEHS33DKNUY.jpeg" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">Jugador: {{player.full_name}}</h5>
+            <p class="card-text">Estatura: {{player.height}}</p>
+            <p class="card-text">Edad: {{player.age}}</p>
+            <p class="card-text">Club: {{player.club}}</p>
+            <p class="card-text">Posicion: {{player.position}}</p>
+            <p class="card-text">Pierna Habil: {{player.skillfull_leg}}</p>
+            <a href="/plantel/editar-jugador/{{player.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/plantel/borrar-jugador/{{player.id}}/" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+
+    
+        {% endfor %}
+
+
+
+{% endblock %}

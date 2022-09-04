@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    GRUPOS
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <h1>GRUPOS:</h1>
+    
+    {% for group in groups %}
+
+    <div class="card" style="width: 18rem;">
+        
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                {{group.type}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{group.team1}}</li>
+                <li class="list-group-item">{{group.team2}}</li>
+                <li class="list-group-item">{{group.team3}}</li>
+                <li class="list-group-item">{{group.team4}}</li>
+                <a href="/groups/editar-grupo/{{group.id}}/" class="btn btn-primary">Editar</a>
+                <a href="/groups/borrar-grupo/{{group.id}}/" class="btn btn-danger">Borrar</a>
+            </ul>
+        </div>
+    
+        {% endfor %}
+
+
+
+{% endblock %}

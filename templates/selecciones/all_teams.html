@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Selecciones
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <h1>Selecciones Clasificadas:</h1>
+    
+    {% for team in teams %}
+
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{team.name}} from  {{team.federation}}</li>
+            <a href="/selecciones/editar-equipo/{{team.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/selecciones/borrar-equipo/{{team.id}}/" class="btn btn-danger">Borrar</a>
+        </ul>
+    </div>
+    
+    
+    {% endfor %}
+
+{% endblock %}

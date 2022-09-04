@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Borrar Seleccion
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{team.name}} from  {{team.federation}}</li>    
+    </ul>
+</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <p><input type="submit" value="Borrar"></p>
+    
+</form>
+
+{% endblock %}

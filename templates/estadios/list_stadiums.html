@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Estadios
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    <h1>Estadios del mundial:</h1>
+    
+    {% for stadium in stadiums %}
+
+    <div class="card" style="width: 18rem;">
+        {% if stadium.image %}
+        <img src="{{stadium.image.url}}" class="card-img-top">
+        {% else %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-R6Y7pY2ow7sNuxjvBuEHqFls9XGNcliXA&usqp=CAU" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">Estadio: {{stadium.name}}</h5>
+            
+            <a href="/estadios/editar-estadio/{{stadium.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/estadios/borrar-estadio/{{stadium.id}}/" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+
+    
+        {% endfor %}
+
+
+
+{% endblock %}

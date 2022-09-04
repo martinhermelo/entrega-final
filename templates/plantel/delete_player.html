@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+
+    Borrar Jugador
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+    <h1>Este Jugador se queda fuera del Mundial?</h1>
+
+    
+        <h5 class="card-title">Jugador: {{player.full_name}}</h5>
+        <p class="card-text">Estatura: {{player.height}}</p>
+        <p class="card-text">Edad: {{player.age}}</p>
+        <p class="card-text">Club: {{player.club}}</p>
+        <p class="card-text">Posicion: {{player.position}}</p>
+        <p class="card-text">Pierna Habil: {{player.skillfull_leg}}</p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <p><input type="submit" value="Borrar"></p>
+        
+    </form>
+    
+
+
+
+{% endblock %}
