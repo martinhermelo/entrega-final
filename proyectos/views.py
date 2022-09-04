@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from groups.views import Groups
 from selecciones.views import Selecciones
 from plantel.views import Plantel
+from estadios.views import Estadios
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -13,9 +14,11 @@ def search_all(request):
         players = Plantel.objects.filter(full_name__icontains=search)
         groups = Groups.objects.filter(type__icontains=search)
         teams= Selecciones.objects.filter(name__icontains=search)
+        stadiums= Estadios.objects.filter(name__icontains=search)
         context= {
             "players": players,
             "groups": groups,
-            "teams": teams
+            "teams": teams,
+            "stadiums":stadiums,
             }
         return render(request,"search.html", context=context)

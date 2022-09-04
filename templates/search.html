@@ -10,20 +10,25 @@
 
     {% for player in players %}
 
-    <div class="card" style="width: 18rem;">
-        
         <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Jugador: {{player.full_name}}
+            {% if player.image %}
+            <img src="{{player.image.url}}" class="card-img-top">
+            {% else %}
+            <img src="https://www.lavoz.com.ar/resizer/6Rcp7PkY7hTfbje_-rvct4EI270=/1023x661/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/WPKIYEIMQVAKPIDPEHS33DKNUY.jpeg" class="card-img-top">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">Jugador: {{player.full_name}}</h5>
+                <p class="card-text">Estatura: {{player.height}}</p>
+                <p class="card-text">Edad: {{player.age}}</p>
+                <p class="card-text">Club: {{player.club}}</p>
+                <p class="card-text">Posicion: {{player.position}}</p>
+                <p class="card-text">Pierna Habil: {{player.skillfull_leg}}</p>
+                <a href="/plantel/editar-jugador/{{player.id}}/" class="btn btn-primary">Editar</a>
+                <a href="/plantel/borrar-jugador/{{player.id}}/" class="btn btn-danger">Borrar</a>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Estatura: {{player.height}}</li>
-                <li class="list-group-item">Edad: {{player.age}}</li>
-                <li class="list-group-item">Club: {{player.club}}</li>
-                <li class="list-group-item">Posicion: {{player.position}}</li>
-                <li class="list-group-item">Pierna Habil: {{player.skillfull_leg}}</li>
-            </ul>
         </div>
+
+
     {% endfor %}
 
     {% for group in groups %}
@@ -45,15 +50,35 @@
 
     {% for team in teams %}
 
-    <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{team.name}} from  {{team.federation}}</li>
-            
-        </ul>
-    </div>
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{team.name}} from  {{team.federation}}</li>
+                
+            </ul>
+        </div>
     
     
     {% endfor %}
+
+    {% for stadium in stadiums %}
+
+    <div class="card" style="width: 18rem;">
+        {% if stadium.image %}
+        <img src="{{stadium.image.url}}" class="card-img-top">
+        {% else %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-R6Y7pY2ow7sNuxjvBuEHqFls9XGNcliXA&usqp=CAU" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">Estadio: {{stadium.name}}</h5>
+            
+            <a href="/estadios/editar-estadio/{{stadium.id}}/" class="btn btn-primary">Editar</a>
+            <a href="/estadios/borrar-estadio/{{stadium.id}}/" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+
+    
+    {% endfor %}
+
 
 
 

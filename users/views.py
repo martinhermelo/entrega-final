@@ -52,3 +52,4 @@ def show_profile(request):
 
 def about_me(request):
     return render(request, "users/aboutme.html", context={})
+
